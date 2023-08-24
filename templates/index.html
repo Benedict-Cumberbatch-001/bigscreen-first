@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--width=device-width：指定视口的宽度与设备的宽度相等，使网页内容在设备上以真实的像素宽度显示，不会出现缩放或压缩。
+initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩放，以确保网页内容按照设备的实际像素比例显示。-->
+    <title>岩石工程安全分析及预警系统</title>
+    <link rel="stylesheet" href="/static/css/index.css"/>
+</head>
+<body >
+    <header>
+        <div class="head">
+            <div class="head-gif"></div>
+            <h1>岩石工程安全分析及预警系统</h1>
+        </div>
+
+        <div class="showTime"></div>
+        <div class="logo"></div>
+
+    </header>
+    <!--页面主体部分-->
+    <section class="mainbox">
+
+        <!--左侧板块-->
+    <div class="column">
+
+        <div class="panel information" >
+            <div class="information1">
+                <div class="minlogo"></div>
+                <div class="minlogo">
+                    <ul>
+                    <li>工程数</li>
+                    <li>8</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="information2">
+                <div class="minlogo" ></div>
+                <div class="minlogo">
+                    <ul>
+                    <li>项目数</li>
+                    <li>18</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="information3">
+                <div class="minlogo"></div>
+                <div class="minlogo">
+                    <ul>
+                    <li>设备数</li>
+                    <li>125</li>
+                    </ul>
+                </div>
+            </div>
+            
+        <div class="panel-footer"></div>
+
+        </div>
+
+        <div class="panel line" >
+            <h2>工程领域</h2>
+            <div class="chart" id="pie" >图表</div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="shebei-chart">
+            <div class="panel-footer"></div>
+            <div class="img">
+                <span>设备状态</span>
+            </div>
+            <table>
+                <thead>
+                  <tr>
+                    <th>设备种类</th>
+                    <th>微震传感器</th>
+                    <th>孔隙水压力计</th>
+                    <th>三维激光扫描</th>
+                    <th>倾角加速度计</th>
+                    <th>阵列式位移计</th>
+                    <th>锚杆应力计</th>
+                    <th>多点位移计</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                        <div style="display: flex; justify-content: center">
+                          <img src="/static/images/在线.png"  width=25.5/80rem height=19.02/80rem style="margin-right: 0.125rem;margin-top:2px;">
+                          <span>在线</span>
+                        </div>
+                    </td>
+                    <td>151</td>
+                    <td>56</td>
+                    <td>5</td>
+                    <td>18</td>
+                    <td>10</td>
+                    <td>12</td>
+                    <td>256</td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <div style="display: flex; justify-content: center">
+                          <img src="/static/images/缺省页-无网络%20拷贝.png"  width=28/80rem height=28/80rem style="margin-right: 0.125rem;margin-top:0px;">
+                          <span>失真</span>
+                        </div>
+                    </td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>11</td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <div style="display: flex; justify-content: center">
+                          <img src="/static/images/离线.png"  width=28/80rem height=20/80rem style="margin-right: 0.125rem;margin-top:0px;">
+                          <span>离线</span>
+                        </div>
+                    </td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>3</td>
+                  </tr>
+                  <!-- 添加更多数据行 -->
+                </tbody>
+            </table>
+
+        </div>
+        <!--百度地图的框-->
+        <div class="baidu" id="allmap"></div>
+    </div>
+
+
+
+
+
+        <!--右侧板块-->
+    <div class="column">
+        <div class="panel bar">
+            <h2>安全风险信息</h2>
+            <div class="gun">
+                <span >名称</span>
+                <span >风险数量</span>
+                <span >待处理量</span>
+                <span >风险等级比例</span>
+            </div>
+            <div id="FontScroll" class="myscroll">
+                <ul>
+                    <li>
+                        <div class="fontInner clearfix">
+                            <span >乌海输水隧洞</span>
+                            <span>6</span>
+                            <span>2</span>
+                            <div  class="little-pie" style="background: #ffeb7b; height: 0.3rem; width: 0.3rem; font-family: 'Times New Roman' ;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="fontInner clearfix">
+                            <span >乌海地下厂房</span>
+                            <span>5</span>
+                            <span>1</span>
+                            <div  class="little-pie" style="background: #ffeb7b; height: 0.3rem; width: 0.3rem; font-family: 'Times New Roman' ;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="fontInner clearfix">
+                            <span >甘肃五九隧道</span>
+                            <span>8</span>
+                            <span>3</span>
+                            <div  class="little-pie" style="background: #ffeb7b; height: 0.3rem; width: 0.3rem; font-family: 'Times New Roman' ;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="fontInner clearfix">
+                            <span >乌海地下水库边坡</span>
+                            <span>6</span>
+                            <span>3</span>
+                            <div  class="little-pie" style="background: #ffeb7b; height: 0.3rem; width: 0.3rem; font-family: 'Times New Roman' ;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="fontInner clearfix">
+                            <span >南芬露天矿边坡</span>
+                            <span>4</span>
+                            <span>0</span>
+                            <div  class="little-pie" style="background: #ffeb7b; height: 0.3rem; width: 0.3rem; font-family: 'Times New Roman' ;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="fontInner clearfix">
+                            <span >陕西引汉济渭</span>
+                            <span>2</span>
+                            <span>0</span>
+                            <div  class="little-pie" style="background: #ffeb7b; height: 0.3rem; width: 0.3rem; font-family: 'Times New Roman' ;"></div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel line">
+            <h2>预警统计</h2>
+            <div class="chart" id="zhexian">图表</div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel pie" style="height:2.3rem;margin-bottom: 0">
+            <h2>预警方法</h2>
+            <div class="chart" style="height:1.8rem;" id="bar2">图表</div>
+            <div class="panel-footer"></div>
+        </div>
+    </div>
+    </section>
+<!--
+<canvas id="canvas" style="position: absolute;top: 0; z-index: -1;"></canvas>//星空背景代码
+-->
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/static/js/flexible.js"></script>
+<script src="/static/js/echarts.js"></script>
+<script src="/static/js/bg.js"></script>
+<script src="/static/js/js.js"> </script>
+<script type="text/javascript" src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=IMvgCG1RHdISfVGvu86Geylf1zBmCrnh"></script>
+<script src="/static/js/fontscroll.js"></script>
+<script src="/static/js/FontScroll-1.2.js"></script>
+
+
+
+
+<script type="text/javascript">
+var map = new BMapGL.Map("allmap");
+map.centerAndZoom(new BMapGL.Point(121.535823,38.886325), 6);//17,数值越小缩放显示范围越大
+map.enableScrollWheelZoom(true);
+map.setHeading(0);
+map.setTilt(45);
+map.setMapStyleV2({
+  styleId: '7b77018c2b281100cbd3b5c135f7926c'
+});
+
+</script>
+
+<script>
+  // 使用插件
+  $(document).ready(function() {
+      console.log('已运行')
+    $("#FontScroll").myScroll({
+      speed: 40,       // 设置滚动速度，值越大速度越慢
+      rowHeight: 44.5    // 设置每行的高度，由于每次滚动一行结束后会立刻跳到下一行的边缘，如果两行之间有间隔就会导致跳动，通过试验44是最好的滚动行高，多和少都会出现跳动
+    });
+  });
+</script>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Echarts</title>
+    <script src="/static/js/echarts.js"></script>
+</head>
+<body>
+<div id="main" style="width: 600px;height:400px;background: #ffeb7b"></div>
+<script type="text/javascript">
+      // 基于准备好的dom，初始化echarts实例
+      var zhexianchart=echarts.init(document.getElementById('main'));
+var DataName = ['安全', '报警','橙色预警','黄色预警'];
+var DataA =["24", "15", "3", "27", "5", "16", "26"]; //安全
+var DataB = ["14", "28", "6", "20", "17", "9", "23"];  //报警
+var DataC=["8", "19", "27", "11", "25", "2", "29"];//橙色预警
+var DataD=["7", "26", "18", "13", "22", "3", "16"];//黄色预警
+var DataDM = ['2023/03/15','2023/03/16','2023/03/17', '2023/03/18','2023/03/19','2023/03/20','2023/03/21' ];
+option ={
+       // backgroundColor: "#344b58",
+        tooltip: {
+        trigger: "axis",
+        axisPointer: {
+            type: "line",
+            textStyle: {
+                color: "#fff",
+            }
+          },
+          //formatter: '{b}<br />{a}: {c}人',
+          //backgroundColor: 'rgba(0,0,0,0.7)', //提示背景
+        },
+        grid: {
+            top: '15%',
+            left: '10%',
+            right: '5%',
+            bottom: '10%',
+        },
+
+        legend: {
+        align: "left",
+        right: '5%',
+        top:'2%',
+        textStyle:{
+            color:'#666',
+            fontSize:12
+        },
+        icon:'pin',
+        itemGap:25,
+        itemWidth:20,
+        itemHeight:5,
+        data: DataName
+        },
+    xAxis: [{
+        type: 'category',
+        boundaryGap: false,
+        axisLine: {
+            show: false,
+            lineStyle: {
+                color: '#666',
+                width:1,
+            },
+        },
+        axisLabel: {
+            textStyle: {
+                color: '#666',
+                padding: [10,0,0,0],
+                fontSize: 12
+            },
+        },
+        splitLine: {
+            show: false,
+        },
+        axisTick: {
+            show: false,
+        },
+         data:DataDM
+    },
+    ],
+    yAxis: [{
+        name: '警示数量',
+        nameTextStyle: {
+            color: "#666",
+            fontSize: 12,
+            padding:[0,25,0,0],
+            lineHeight: 40,
+        },
+        min:0,
+        splitLine: {
+            show: true,
+            lineStyle: {
+                color: 'rgba(200,200,200,.5)',
+                type:'dashed'
+            },
+        },
+        axisLine: {
+            show: false,
+        },
+        axisLabel: {
+            show: true,
+            textStyle: {
+                color: '#666',
+                padding: 16,
+                fontSize: 12,
+            },
+        },
+        axisTick: {
+            show: false,
+        },
+    },
+],
+    series: [{
+        name: DataName[0],
+        type: 'line',
+        showAllSymbol: true,
+        symbolSize: 8,
+        symbol :'circle',
+        smooth: true,
+        lineStyle: {
+            normal: {
+                width: 1,
+                color: "#00CA94",
+            },
+            borderColor: 'rgba(0,0,0,.4)',
+        },
+        itemStyle: {
+            color: "#00CA94",
+        },
+        tooltip: {
+            show: true
+        },
+        data:  DataA
+    },
+    {
+        name: DataName[1],
+        type: 'line',
+        showAllSymbol: true,
+        symbolSize: 8,
+        symbol :'circle',
+        smooth: true,
+        lineStyle: {
+            normal: {
+                width: 1,
+                color: "#FB388F",
+            },
+            borderColor: 'rgba(0,0,0,.4)',
+        },
+        itemStyle: {
+            color: "#FB388F",
+        },
+        tooltip: {
+            show: true
+        },
+        data: DataB
+    },
+    {
+        name: DataName[2],
+        type: 'line',
+        showAllSymbol: true,
+        symbolSize: 8,
+        symbol :'circle',
+        smooth: true,
+        lineStyle: {
+            normal: {
+                width: 1,
+                color: "#FFA500",
+            },
+            borderColor: 'rgba(0,0,0,.4)',
+        },
+        itemStyle: {
+            color: "#FFA500",
+        },
+        tooltip: {
+            show: true
+        },
+        data: DataC
+    },
+    {
+        name: DataName[3],
+        type: 'line',
+        showAllSymbol: true,
+        symbolSize: 8,
+        symbol :'circle',
+        smooth: true,
+        lineStyle: {
+            normal: {
+                width: 1,
+                color: "yellow",
+            },
+            borderColor: 'rgba(0,0,0,.4)',
+        },
+        itemStyle: {
+            color: "yellow",
+        },
+        tooltip: {
+            show: true
+        },
+        data: DataD
+    },
+    ]
+}
+zhexianchart.setOption(option);
+  window.addEventListener("resize", function() {//echarts自带的能随着页面大小自动变化的函数
+zhexianchart.resize();
+});
+    </script>
+</body>
+</html>
