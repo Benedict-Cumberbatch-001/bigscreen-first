@@ -314,7 +314,7 @@ function time() {
 // }
 
 
-
+// 双饼状图表格，要求不要图形上的文字，只要图例
 var myChart = echarts.init(document.getElementById('pie'));
 var option = {
 
@@ -323,17 +323,24 @@ var option = {
     formatter: '{a} <br/>{b}: {c} ({d}%)'
   },
   legend: {
-    top:'5%',
+    top:'2%',
     textStyle:{
       color:'white',
         fontFamily:'宋体',
-        fontWeight:'bold'
+        fontWeight:'bold',
     },
+    itemGap:10,
+    height:'10%',
+    padding: [5, 60],
     data: [
       '水利',
       '交通',
       '矿山',
-    ]
+      '边坡',
+      '隧道',
+      '地下厂房',
+    ],
+
   },
   series: [
 
@@ -342,12 +349,13 @@ var option = {
       name: 'Access From',
       type: 'pie',
       selectedMode: 'single',
-      radius: [0, '30%'],
+      radius: [0, '35%'],
       label: {
-        position: 'inner',
-        fontSize: 12,
-          fontFamily: '宋体',
-          color:'white',
+        // position: 'inner',
+        // fontSize: 12,
+        //   fontFamily: '宋体',
+        //   color:'white',
+        show:false
       },
       labelLine: {
         show: false,
@@ -363,13 +371,14 @@ var option = {
       center:['50%','55%'],
       name: 'Access From',
       type: 'pie',
-      radius: ['45%', '60%'],
+      radius: ['50%', '65%'],
 
          label: {
-        fontSize: 12,
-          fontFamily: '宋体',
-          color:'white',
-          borderType:'dotted',
+        // fontSize: 12,
+        //   fontFamily: '宋体',
+        //   color:'white',
+        //   borderType:'dotted',
+           show: false
       },
       labelLine: {
         // length: 15,
@@ -395,8 +404,8 @@ myChart.resize();
 });
 
 
-
-var zhexianchart=echarts.init(document.getElementById('zhexian'));
+//其实是柱状图
+var zhuzhaungchart=echarts.init(document.getElementById('zhuzhaung'));
 option = {
 
   legend: {
@@ -460,12 +469,14 @@ option = {
     }
     ]
 };
-zhexianchart.setOption(option);
+zhuzhaungchart.setOption(option);
   window.addEventListener("resize", function() {//echarts自带的能随着页面大小自动变化的函数
-zhexianchart.resize();
+zhuzhaungchart.resize();
 });
 
 
+
+//横着的柱状图
 var myColor = ["#1089E7", "#F57474", "#56D0E3", "#F8B448", "#8B78F6"];
 // 1. 实例化对象
 var bar2=echarts.init(document.getElementById('bar2'));
@@ -474,7 +485,7 @@ var option = {
 grid: {
   top: "5%",
   left: "20%",
-  right:"13%",
+  right:"15%",
   bottom: "7.5%"
   // containLabel: true
 },
@@ -499,7 +510,7 @@ yAxis: [
     axisLabel: {
       color: "#fff",
       fontFamily:'微软雅黑',
-      fontSize:12
+      fontSize:12,
       // fontWeight:'bold'
     }
   },
@@ -516,7 +527,8 @@ yAxis: [
     },
     // 把刻度标签里面的文字颜色设置为白色
     axisLabel: {
-      color: "#fff"
+      color: "#fff",
+      fontWeight:'bold'
     }
   }
 ],
@@ -569,4 +581,206 @@ series: [
 bar2.setOption(option);
   window.addEventListener("resize", function() {//echarts自带的能随着页面大小自动变化的函数
 bar2.resize();
+});
+
+
+  //充数的渐变图
+var line=echarts.init(document.getElementById('line'));
+var option = {
+  color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      label: {
+        backgroundColor: '#6a7985'
+      }
+    }
+  },
+  legend: {
+    top:'2%',
+    left:'0%',
+    data: ['Line 1', 'Line 2', 'Line 3', 'Line 4', 'Line 5'],
+    textStyle:{
+      color:'white',
+      fontSize:10,
+    },
+    itemGap: 2
+
+  },
+  toolbox: {
+
+  },
+  grid: {
+    top:'20%',
+    left: '3%',
+    right: '5%',
+    bottom: '5%',
+    containLabel: true
+  },
+  xAxis: [
+    {
+      type: 'category',
+      boundaryGap: false,
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    }
+  ],
+  yAxis: [
+    {
+      axisLabel: {
+        color: "rgba(255,255,255)",
+        fontSize: "12"
+      },
+      splitLine: {
+        lineStyle: {
+        color: "rgba(255,255,255,.2)"}
+      },
+      type: 'value'
+    }
+  ],
+  series: [
+    {
+      name: 'Line 1',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(128, 255, 165)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(1, 191, 236)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [140, 232, 101, 264, 90, 340, 250]
+    },
+    {
+      name: 'Line 2',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(0, 221, 255)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(77, 119, 255)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [120, 282, 111, 234, 220, 340, 310]
+    },
+    {
+      name: 'Line 3',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(55, 162, 255)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(116, 21, 219)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [320, 132, 201, 334, 190, 130, 220]
+    },
+    {
+      name: 'Line 4',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(255, 0, 135)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(135, 0, 157)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [220, 402, 231, 134, 190, 230, 120]
+    },
+    {
+      name: 'Line 5',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      label: {
+        show: true,
+        position: 'top'
+      },
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(255, 191, 0)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(224, 62, 76)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [220, 302, 181, 234, 210, 290, 150]
+    }
+  ]
+};
+line.setOption(option);
+  window.addEventListener("resize", function() {//echarts自带的能随着页面大小自动变化的函数
+line.resize();
 });

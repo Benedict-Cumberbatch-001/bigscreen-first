@@ -13,6 +13,7 @@ li{
   src: url("/static/font/DS-DIGIT.TTF");
 }
 body{
+  overflow-y: hidden;
   background: url("/static/images/bg.jpg") no-repeat top center;
 
 }
@@ -92,8 +93,14 @@ header{
       top: 0.1rem;
       left: 26.5%;
       border: 0.1px solid rgba(2,166,181,0.4) ;
-    }
 
+    }
+    #bingtu{
+      position: absolute;
+      //left: 54%;
+      right: 1.3%;
+      bottom: 0%;
+    }
     .panel{
       flex-direction: column;
       position: relative;
@@ -217,8 +224,73 @@ header{
     }
    }
   }
+.table{
+  height: 3.3rem;
+  .myscroll{
+    height: 2.75rem;
+  }
+  h2{
+
+      background:  rgba(22,101,140,0.5);
+      position: relative;
+      height: 0.55rem;
+      color: white;
+      line-height: 0.55rem;
+      text-align: center;
+      font-size: 0.25rem;
+      font-weight: 700;
+      font-family: 微软雅黑;
+      //&::after{
+      //  position: absolute;
+      //    bottom: 0;
+      //    right: 0;
+      //    content: "";
+      //    width: 60%;
+      //  left: 20%;
+      //  bottom: 5%;
+      //    border-bottom: 1px solid #02a6b5;
+
+      //}
+    }
+  .gun{
+
+        height: 0.35rem;
+        position: relative;
+        display: flex;
+        //justify-content: space-around;
+        margin-top: 0.1rem;
+        //margin-bottom: 0.35rem;
+        font-size: 0.2rem;
+        color: #00f7de;
+        font-family: 微软雅黑;
+        font-weight: bold;
+        width: 100%;
+        float: left;
+        span{
+          //line-height（行高）文本的高度，height（高度）元素的高度
+          //如果文本行的高度小于 line-height 的值，会根据 vertical-align 属性进行对齐
+          height: 0.2rem;
+          &:nth-child(1){
+            position: absolute;
+            left: 5.8%;
+          }
+          &:nth-child(2){
+            position: absolute;
+            left: 33.5%;
+          }
+          &:nth-child(3){
+            position: absolute;
+            left: 57%;
+          }
+          &:nth-child(4){
+            position: absolute;
+            left: 78.5%;
+          }
+        }
+      }
+}
 //.FontScroll 表示选择具有 class="FontScroll" 的元素，而 #FontScroll 表示选择具有 id="FontScroll" 的元素
-#FontScroll{
+#FontScroll1{
   width: 100%;
   height: 2.8rem;
   margin-top: 10px;
@@ -227,7 +299,7 @@ header{
 
 }
 
-#FontScroll ul li{
+#FontScroll1 ul li{
   margin-bottom: 0.15rem;
   height: 0.4rem;
   line-height: 0.25rem;
@@ -260,6 +332,7 @@ header{
    /* 让每个子元素平均占据一行的宽度 */
    /* 居中对齐文本 */
   font-size: 0.15rem;
+  font-weight: 700;
   color: white;
   /* 可以根据需要添加其他样式属性 */
 }
@@ -272,7 +345,68 @@ header{
 //
 //}
 
-#FontScroll ul li:hover{//这是一个伪类选择器，它表示选中元素在鼠标悬停时应用的样式
+#FontScroll1 ul li:hover{//这是一个伪类选择器，它表示选中元素在鼠标悬停时应用的样式
+    box-shadow: -10px 0px 15px #034c6a inset, /*左边阴影*/
+    10px 0px 15px #034c6a inset;
+    cursor: pointer;
+}
+//****************
+#FontScroll2{
+  width: 100%;
+  height: 2.2rem;
+  margin-top: 10px;
+  overflow: hidden;
+  position: relative;//这个是保证让ul在Fontscroll里滚动的关键
+
+}
+
+#FontScroll2 ul li{
+  margin-bottom: 0.15rem;
+  height: 0.4rem;
+  line-height: 0.25rem;
+  .fontInner {
+
+    height: 0.4rem;
+  display: flex; /* 设置为 Flex 容器 */
+   align-items: center; /* 子元素均匀分布在一行 */
+}
+
+.fontInner span,
+.fontInner div {
+  vertical-align: center;//让子元素垂直居中对齐
+  &:nth-child(1){
+    position: absolute;
+            left: 5.8%;
+  }
+  &:nth-child(2){
+    position: absolute;
+            left: 37.5%;
+  }
+  &:nth-child(3){
+    position: absolute;
+            left: 60%;
+  }
+  &:nth-child(4){
+    position: absolute;
+            left: 82.5%;
+  }
+   /* 让每个子元素平均占据一行的宽度 */
+   /* 居中对齐文本 */
+  font-size: 0.18rem;
+  font-weight: 700;
+  color: white;
+  /* 可以根据需要添加其他样式属性 */
+}
+
+}
+//#FontScroll ul li:nth-child(1){
+//    /*background-color: #072951;*/
+//    box-shadow: -10px 0px 15px #034c6a inset, /*左边阴影*/
+//    10px 0px 15px #034c6a inset;
+//
+//}
+
+#FontScroll2 ul li:hover{//这是一个伪类选择器，它表示选中元素在鼠标悬停时应用的样式
     box-shadow: -10px 0px 15px #034c6a inset, /*左边阴影*/
     10px 0px 15px #034c6a inset;
     cursor: pointer;
@@ -394,8 +528,9 @@ header{
 }
 .shebei-chart{
   position: relative;
-  width: 18.55rem;
-  height: 2.3rem;
+  width: 6.5rem;
+  height: 3.3rem;
+  //background-color: yellow;
   background-color: rgba(7,69,108,0.4);
   &::before {
           position: absolute;

@@ -1,47 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Table with Grid Lines</title>
-  <style>
-    table {
-      border-collapse: collapse; /* 合并边框，使表格线连续 */
-      width: 100%;
+    <title>右键菜单示例</title>
+    <meta charset="utf-8">
+    <style>
+        /* 菜单样式 */
+        .custom-context-menu {
+            position: absolute;
+            display: none;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
 
-    }
+        .custom-context-menu-item {
+            cursor: pointer;
+            padding: 5px;
+        }
 
-    th, td {
-      border: 1px solid black; /* 设置单元格边框样式 */
-      padding: 8px; /* 设置单元格内边距 */
-      text-align: center; /* 居中显示单元格内容 */
-    }
-
-    th {
-      background-color: #f2f2f2; /* 设置表头背景色 */
-    }
-  </style>
+        .custom-context-menu-item:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
 </head>
 <body>
-  <table>
-    <thead>
-      <tr>
-        <th>Column 1</th>
-        <th>Column 2</th>
-        <th>Column 3</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Data 1</td>
-        <td>Data 2</td>
-        <td>Data 3</td>
-      </tr>
-      <tr>
-        <td>Data 4</td>
-        <td>Data 5</td>
-        <td>Data 6</td>
-      </tr>
-      <!-- 添加更多数据行 -->
-    </tbody>
-  </table>
+    <div class="custom-context-menu" id="contextMenu">
+        <div class="custom-context-menu-item" id="menuItem1">菜单项 1</div>
+        <div class="custom-context-menu-item" id="menuItem2">菜单项 2</div>
+    </div>
+    <script>
+        // 在页面右键点击时显示自定义菜单
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault(); // 阻止默认右键菜单
+            var contextMenu = document.getElementById('contextMenu');
+            contextMenu.style.left = e.clientX + 'px';
+            contextMenu.style.top = e.clientY + 'px';
+            contextMenu.style.display = 'block';
+        });
+
+        // 在页面其他区域点击时隐藏自定义菜单
+        document.addEventListener('click', function () {
+            var contextMenu = document.getElementById('contextMenu');
+            contextMenu.style.display = 'none';
+        });
+        // 给菜单项1添加点击事件
+        var menuItem1 = document.getElementById('menuItem1');
+        menuItem1.addEventListener('click', function () {
+            alert('您点击了菜单项 1');
+        });
+
+        // 给菜单项2添加点击事件
+        var menuItem2 = document.getElementById('menuItem2');
+        menuItem2.addEventListener('click', function () {
+            alert('您点击了菜单项 2');
+        });
+    </script>
 </body>
 </html>

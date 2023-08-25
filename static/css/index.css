@@ -12,6 +12,7 @@ li {
   src: url("/static/font/DS-DIGIT.TTF");
 }
 body {
+  overflow-y: hidden;
   background: url("/static/images/bg.jpg") no-repeat top center;
 }
 header {
@@ -79,6 +80,11 @@ header .showTime {
   top: 0.1rem;
   left: 26.5%;
   border: 0.1px solid rgba(2, 166, 181, 0.4);
+}
+.mainbox .column #bingtu {
+  position: absolute;
+  right: 1.3%;
+  bottom: 0%;
 }
 .mainbox .column .panel {
   flex-direction: column;
@@ -184,55 +190,157 @@ header .showTime {
   position: absolute;
   left: 75%;
 }
-#FontScroll {
+.table {
+  height: 3.3rem;
+}
+.table .myscroll {
+  height: 2.75rem;
+}
+.table h2 {
+  background: rgba(22, 101, 140, 0.5);
+  position: relative;
+  height: 0.55rem;
+  color: white;
+  line-height: 0.55rem;
+  text-align: center;
+  font-size: 0.25rem;
+  font-weight: 700;
+  font-family: 微软雅黑;
+}
+.table .gun {
+  height: 0.35rem;
+  position: relative;
+  display: flex;
+  margin-top: 0.1rem;
+  font-size: 0.2rem;
+  color: #00f7de;
+  font-family: 微软雅黑;
+  font-weight: bold;
+  width: 100%;
+  float: left;
+}
+.table .gun span {
+  height: 0.2rem;
+}
+.table .gun span:nth-child(1) {
+  position: absolute;
+  left: 5.8%;
+}
+.table .gun span:nth-child(2) {
+  position: absolute;
+  left: 33.5%;
+}
+.table .gun span:nth-child(3) {
+  position: absolute;
+  left: 57%;
+}
+.table .gun span:nth-child(4) {
+  position: absolute;
+  left: 78.5%;
+}
+#FontScroll1 {
   width: 100%;
   height: 2.8rem;
   margin-top: 10px;
   overflow: hidden;
   position: relative;
 }
-#FontScroll ul li {
+#FontScroll1 ul li {
   margin-bottom: 0.15rem;
   height: 0.4rem;
   line-height: 0.25rem;
 }
-#FontScroll ul li .fontInner {
+#FontScroll1 ul li .fontInner {
   height: 0.4rem;
   display: flex;
   /* 设置为 Flex 容器 */
   align-items: center;
   /* 子元素均匀分布在一行 */
 }
-#FontScroll ul li .fontInner span,
-#FontScroll ul li .fontInner div {
+#FontScroll1 ul li .fontInner span,
+#FontScroll1 ul li .fontInner div {
   vertical-align: center;
   /* 让每个子元素平均占据一行的宽度 */
   /* 居中对齐文本 */
   font-size: 0.15rem;
+  font-weight: 700;
   color: white;
   /* 可以根据需要添加其他样式属性 */
 }
-#FontScroll ul li .fontInner span:nth-child(1),
-#FontScroll ul li .fontInner div:nth-child(1) {
+#FontScroll1 ul li .fontInner span:nth-child(1),
+#FontScroll1 ul li .fontInner div:nth-child(1) {
   position: absolute;
   left: 6%;
 }
-#FontScroll ul li .fontInner span:nth-child(2),
-#FontScroll ul li .fontInner div:nth-child(2) {
+#FontScroll1 ul li .fontInner span:nth-child(2),
+#FontScroll1 ul li .fontInner div:nth-child(2) {
   position: absolute;
   left: 37.5%;
 }
-#FontScroll ul li .fontInner span:nth-child(3),
-#FontScroll ul li .fontInner div:nth-child(3) {
+#FontScroll1 ul li .fontInner span:nth-child(3),
+#FontScroll1 ul li .fontInner div:nth-child(3) {
   position: absolute;
   left: 55.5%;
 }
-#FontScroll ul li .fontInner span:nth-child(4),
-#FontScroll ul li .fontInner div:nth-child(4) {
+#FontScroll1 ul li .fontInner span:nth-child(4),
+#FontScroll1 ul li .fontInner div:nth-child(4) {
   position: absolute;
   left: 80%;
 }
-#FontScroll ul li:hover {
+#FontScroll1 ul li:hover {
+  box-shadow: -10px 0px 15px #034c6a inset, /*左边阴影*/ 10px 0px 15px #034c6a inset;
+  cursor: pointer;
+}
+#FontScroll2 {
+  width: 100%;
+  height: 2.2rem;
+  margin-top: 10px;
+  overflow: hidden;
+  position: relative;
+}
+#FontScroll2 ul li {
+  margin-bottom: 0.15rem;
+  height: 0.4rem;
+  line-height: 0.25rem;
+}
+#FontScroll2 ul li .fontInner {
+  height: 0.4rem;
+  display: flex;
+  /* 设置为 Flex 容器 */
+  align-items: center;
+  /* 子元素均匀分布在一行 */
+}
+#FontScroll2 ul li .fontInner span,
+#FontScroll2 ul li .fontInner div {
+  vertical-align: center;
+  /* 让每个子元素平均占据一行的宽度 */
+  /* 居中对齐文本 */
+  font-size: 0.18rem;
+  font-weight: 700;
+  color: white;
+  /* 可以根据需要添加其他样式属性 */
+}
+#FontScroll2 ul li .fontInner span:nth-child(1),
+#FontScroll2 ul li .fontInner div:nth-child(1) {
+  position: absolute;
+  left: 5.8%;
+}
+#FontScroll2 ul li .fontInner span:nth-child(2),
+#FontScroll2 ul li .fontInner div:nth-child(2) {
+  position: absolute;
+  left: 37.5%;
+}
+#FontScroll2 ul li .fontInner span:nth-child(3),
+#FontScroll2 ul li .fontInner div:nth-child(3) {
+  position: absolute;
+  left: 60%;
+}
+#FontScroll2 ul li .fontInner span:nth-child(4),
+#FontScroll2 ul li .fontInner div:nth-child(4) {
+  position: absolute;
+  left: 82.5%;
+}
+#FontScroll2 ul li:hover {
   box-shadow: -10px 0px 15px #034c6a inset, /*左边阴影*/ 10px 0px 15px #034c6a inset;
   cursor: pointer;
 }
@@ -340,8 +448,8 @@ header .showTime {
 }
 .shebei-chart {
   position: relative;
-  width: 18.55rem;
-  height: 2.3rem;
+  width: 6.5rem;
+  height: 3.3rem;
   background-color: rgba(7, 69, 108, 0.4);
 }
 .shebei-chart::before {

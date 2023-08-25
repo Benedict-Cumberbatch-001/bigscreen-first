@@ -63,77 +63,87 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
             <div class="chart" id="pie" >图表</div>
             <div class="panel-footer"></div>
         </div>
-        <div class="shebei-chart">
+        <div class="shebei-chart" >
             <div class="panel-footer"></div>
-            <div class="img">
-                <span>设备状态</span>
+            <div class="table">
+                <h2>设备信息</h2>
+                    <div class="gun">
+                        <span >设备名称</span>
+                        <span >在线数量</span>
+                        <span >离线数量</span>
+                        <span >失真数量</span>
+                    </div>
+                <div id="FontScroll2" class="myscroll">
+                <ul>
+                    <li>
+                        <div class="fontInner clearfix">
+                            <span >微震传感器</span>
+                            <span>6</span>
+                            <span>2</span>
+                            <span>1</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="fontInner clearfix">
+                            <span >孔隙水压力计</span>
+                            <span>5</span>
+                            <span>1</span>
+                            <span>1</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="fontInner clearfix">
+                            <span >三维激光扫描</span>
+                            <span>8</span>
+                            <span>3</span>
+                            <span>1</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="fontInner clearfix">
+                            <span >倾角加速度计</span>
+                            <span>6</span>
+                            <span>3</span>
+                            <span>1</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="fontInner clearfix">
+                            <span >阵列式位移计</span>
+                            <span>4</span>
+                            <span>0</span>
+                            <span>1</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="fontInner clearfix">
+                            <span >锚杆应力计</span>
+                            <span>2</span>
+                            <span>0</span>
+                            <span>1</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="fontInner clearfix">
+                            <span >多点位移计</span>
+                            <span>2</span>
+                            <span>0</span>
+                            <span>1</span>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <table>
-                <thead>
-                  <tr>
-                    <th>设备种类</th>
-                    <th>微震传感器</th>
-                    <th>孔隙水压力计</th>
-                    <th>三维激光扫描</th>
-                    <th>倾角加速度计</th>
-                    <th>阵列式位移计</th>
-                    <th>锚杆应力计</th>
-                    <th>多点位移计</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                        <div style="display: flex; justify-content: center">
-                          <img src="/static/images/在线.png"  width=25.5/80rem height=19.02/80rem style="margin-right: 0.125rem;margin-top:2px;">
-                          <span>在线</span>
-                        </div>
-                    </td>
-                    <td>151</td>
-                    <td>56</td>
-                    <td>5</td>
-                    <td>18</td>
-                    <td>10</td>
-                    <td>12</td>
-                    <td>256</td>
-                  </tr>
-                  <tr>
-                    <td>
-                        <div style="display: flex; justify-content: center">
-                          <img src="/static/images/缺省页-无网络%20拷贝.png"  width=28/80rem height=28/80rem style="margin-right: 0.125rem;margin-top:0px;">
-                          <span>失真</span>
-                        </div>
-                    </td>
-                    <td>5</td>
-                    <td>3</td>
-                    <td>0</td>
-                    <td>4</td>
-                    <td>2</td>
-                    <td>1</td>
-                    <td>11</td>
-                  </tr>
-                  <tr>
-                    <td>
-                        <div style="display: flex; justify-content: center">
-                          <img src="/static/images/离线.png"  width=28/80rem height=20/80rem style="margin-right: 0.125rem;margin-top:0px;">
-                          <span>离线</span>
-                        </div>
-                    </td>
-                    <td>2</td>
-                    <td>1</td>
-                    <td>4</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>5</td>
-                    <td>3</td>
-                  </tr>
-                  <!-- 添加更多数据行 -->
-                </tbody>
-            </table>
-
+            </div>
+        </div>
+        <div class="panel pie" style="height:3.3rem;width:4.5rem;margin-bottom: 0" id="bingtu">
+            <h2>预警方法</h2>
+            <div class="chart" style="height:2.8rem;" id="bar2">    </div>
+            <div class="panel-footer"></div>
         </div>
         <!--百度地图的框-->
-        <div class="baidu" id="allmap"></div>
+        <div class="baidu" id="allmap">
+
+        </div>
     </div>
 
 
@@ -150,7 +160,7 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
                 <span >待处理量</span>
                 <span >风险等级比例</span>
             </div>
-            <div id="FontScroll" class="myscroll">
+            <div id="FontScroll1" class="myscroll">
                 <ul>
                     <li>
                         <div class="fontInner clearfix">
@@ -208,14 +218,15 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
         </div>
         <div class="panel line">
             <h2>预警统计</h2>
-            <div class="chart" id="zhexian">图表</div>
+            <div class="chart" id="zhuzhaung">图表</div>
             <div class="panel-footer"></div>
         </div>
-        <div class="panel pie" style="height:2.3rem;margin-bottom: 0">
-            <h2>预警方法</h2>
-            <div class="chart" style="height:1.8rem;" id="bar2">图表</div>
+        <div class="panel pie" style="height:3.3rem;margin-bottom: 0">
+            <h2>折线图</h2>
+            <div class="chart" style="height:2.8rem;" id="line"></div>
             <div class="panel-footer"></div>
         </div>
+
     </div>
     </section>
 <!--
@@ -236,14 +247,86 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
 
 
 <script type="text/javascript">
+//百度地图js代码
 var map = new BMapGL.Map("allmap");
 map.centerAndZoom(new BMapGL.Point(121.535823,38.886325), 6);//17,数值越小缩放显示范围越大
 map.enableScrollWheelZoom(true);
 map.setHeading(0);
 map.setTilt(45);
-map.setMapStyleV2({
-  styleId: '7b77018c2b281100cbd3b5c135f7926c'
-});
+//map.setMapStyleV2({
+  //styleId: '7b77018c2b281100cbd3b5c135f7926c'
+//});
+map.setMapType(BMAP_EARTH_MAP);  // 设置地图类型为地球模式
+
+var zoomCtrl = new BMapGL.ZoomControl();  // 添加缩放控件
+map.addControl(zoomCtrl);
+
+var cityCtrl = new BMapGL.CityListControl({
+            // 控件的停靠位置（可选，默认左上角）
+            anchor: BMAP_ANCHOR_TOP_RIGHT,
+            // 控件基于停靠位置的偏移量（可选）
+            offset: new BMapGL.Size(20, 20)
+        });  // 添加城市列表控件
+map.addControl(cityCtrl);
+
+    var point = new BMapGL.Point(121.535823,38.886325);
+	map.centerAndZoom(point, 15);
+//设置左键菜单
+var menu = new BMapGL.ContextMenu();
+var txtMenuItem = [
+    {
+        text: '新建项目',
+        callback: function () {
+            var myIcon = new BMapGL.Icon("/static/images/色相_饱和度 1.png", new BMapGL.Size(30, 90));
+
+            var point = new BMapGL.Point(lng, lat);
+            var marker = new BMapGL.Marker(point, {
+                icon: myIcon
+            });
+            //var marker = new BMapGL.Marker(point);  // 创建标注
+            map.addOverlay(marker);              // 将标注添加到地图中
+            var opts = {
+                width : 200,     // 信息窗口宽度
+                height: 100,     // 信息窗口高度
+                title : "请输入项目名称" , // 信息窗口标题
+                message:"这里是故宫"
+            }
+            var infoWindow = new BMapGL.InfoWindow("请输入项目概况...", opts);  // 创建信息窗口对象
+
+            marker.addEventListener("rightclick", function(){
+                map.openInfoWindow(infoWindow, point); //开启信息窗口
+	        });
+
+        }
+    }, {
+        text: '删除项目',
+
+        callback: function (e) {
+            alert('暂未设置该功能')
+        }
+    }
+];
+for(var i = 0; i < txtMenuItem.length; i++){
+    menu.addItem(new BMapGL.MenuItem(               // 定义菜单项实例
+        txtMenuItem[i].text,                        // 传入菜单项的显示文本
+        txtMenuItem[i].callback,                    // 传入菜单项的回调函数
+        {
+            width: 80,                             // 指定菜单项的宽度
+            id: 'menu' + i                          // 指定菜单项dom的id
+        }
+    ));
+}
+
+map.addContextMenu(menu);
+map.addEventListener('click', function (e) {
+    lng=e.latlng.lng;
+    lat=e.latlng.lat;
+
+  menu.show()
+}) // 在点击位置显示菜单
+
+
+
 
 </script>
 
@@ -251,11 +334,20 @@ map.setMapStyleV2({
   // 使用插件
   $(document).ready(function() {
       console.log('已运行')
-    $("#FontScroll").myScroll({
+    $("#FontScroll1").myScroll({
       speed: 40,       // 设置滚动速度，值越大速度越慢
-      rowHeight: 44.5    // 设置每行的高度，由于每次滚动一行结束后会立刻跳到下一行的边缘，如果两行之间有间隔就会导致跳动，通过试验44是最好的滚动行高，多和少都会出现跳动
+      rowHeight: 41    // 设置每行的高度，由于每次滚动一行结束后会立刻跳到下一行的边缘，如果两行之间有间隔就会导致跳动，通过试验44是最好的滚动行高，多和少都会出现跳动
     });
   });
 </script>
-
+<script>
+  // 使用插件
+  $(document).ready(function() {
+      console.log('已运行')
+    $("#FontScroll2").myScroll({
+      speed: 40,       // 设置滚动速度，值越大速度越慢
+      rowHeight: 41    // 设置每行的高度，由于每次滚动一行结束后会立刻跳到下一行的边缘，如果两行之间有间隔就会导致跳动，通过试验44是最好的滚动行高，多和少都会出现跳动
+    });
+  });
+</script>
 </html>
