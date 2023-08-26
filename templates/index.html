@@ -135,15 +135,18 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
             </div>
             </div>
         </div>
-        <div class="panel pie" style="height:3.3rem;width:4.5rem;margin-bottom: 0" id="bingtu">
+        <div class="panel pie" style="height:3.3rem;width:6rem;margin-bottom: 0" id="bingtu">
             <h2>预警方法</h2>
             <div class="chart" style="height:2.8rem;" id="bar2">    </div>
             <div class="panel-footer"></div>
         </div>
-        <!--百度地图的框-->
-        <div class="baidu" id="allmap">
-
+        <div class="panel suibian" style="height:3.3rem;margin-bottom: 0 " id="suibian">
+            <h2>监测数据图</h2>
+            <div class="chart" style="height:2.8rem;" id="aqi">    </div>
+            <div class="panel-footer"></div>
         </div>
+        <!--百度地图的框-->
+        <div class="baidu" id="allmap"></div>
     </div>
 
 
@@ -158,6 +161,7 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
                 <span >名称</span>
                 <span >风险数量</span>
                 <span >待处理量</span>
+                <span >工程状态</span>
                 <span >风险等级比例</span>
             </div>
             <div id="FontScroll1" class="myscroll">
@@ -167,6 +171,7 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
                             <span >乌海输水隧洞</span>
                             <span>6</span>
                             <span>2</span>
+                            <span>完成</span>
                             <div  class="little-pie" style="background: #ffeb7b; height: 0.3rem; width: 0.3rem; font-family: 'Times New Roman' ;"></div>
                         </div>
                     </li>
@@ -175,6 +180,8 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
                             <span >乌海地下厂房</span>
                             <span>5</span>
                             <span>1</span>
+                            <span>进行</span>
+
                             <div  class="little-pie" style="background: #ffeb7b; height: 0.3rem; width: 0.3rem; font-family: 'Times New Roman' ;"></div>
                         </div>
                     </li>
@@ -183,6 +190,8 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
                             <span >甘肃五九隧道</span>
                             <span>8</span>
                             <span>3</span>
+                            <span>进行</span>
+
                             <div  class="little-pie" style="background: #ffeb7b; height: 0.3rem; width: 0.3rem; font-family: 'Times New Roman' ;"></div>
                         </div>
                     </li>
@@ -191,6 +200,8 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
                             <span >乌海地下水库边坡</span>
                             <span>6</span>
                             <span>3</span>
+                            <span>完成</span>
+
                             <div  class="little-pie" style="background: #ffeb7b; height: 0.3rem; width: 0.3rem; font-family: 'Times New Roman' ;"></div>
                         </div>
                     </li>
@@ -199,6 +210,8 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
                             <span >南芬露天矿边坡</span>
                             <span>4</span>
                             <span>0</span>
+                            <span>完成</span>
+
                             <div  class="little-pie" style="background: #ffeb7b; height: 0.3rem; width: 0.3rem; font-family: 'Times New Roman' ;"></div>
                         </div>
                     </li>
@@ -207,6 +220,8 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
                             <span >陕西引汉济渭</span>
                             <span>2</span>
                             <span>0</span>
+                            <span>进行</span>
+
                             <div  class="little-pie" style="background: #ffeb7b; height: 0.3rem; width: 0.3rem; font-family: 'Times New Roman' ;"></div>
                         </div>
                     </li>
@@ -222,7 +237,7 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
             <div class="panel-footer"></div>
         </div>
         <div class="panel pie" style="height:3.3rem;margin-bottom: 0">
-            <h2>折线图</h2>
+            <h2>渐变折线图</h2>
             <div class="chart" style="height:2.8rem;" id="line"></div>
             <div class="panel-footer"></div>
         </div>

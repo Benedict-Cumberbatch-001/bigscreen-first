@@ -421,7 +421,7 @@ option = {
   tooltip: {},
   dataset: {
     source: [
-      ['时间', '安全', '橙色预警', '黄色预警','报警'],
+      ['时间', '安全', '黄色预警', '橙色预警','报警'],
       ['2023/08/15',14,5,3,3],
       ['2023/08/16', 15, 5,3,3],
       ['2023/08/17', 12,4, 8,3],
@@ -453,12 +453,12 @@ option = {
       }
         },
     { type: 'bar',itemStyle: {
-        color: '#FFA500',
+        color: '#DBDB70',
         barBorderRadius: 3
       }
       },
     { type: 'bar',itemStyle: {
-        color: '#DBDB70',
+        color: '#FFA500',
         barBorderRadius: 3
       }
       },
@@ -783,4 +783,114 @@ var option = {
 line.setOption(option);
   window.addEventListener("resize", function() {//echarts自带的能随着页面大小自动变化的函数
 line.resize();
+});
+
+
+
+
+//AQI监测数据图
+var AQI=echarts.init(document.getElementById('aqi'));
+$.get('/static/js/aqi-beijing.json', function (data) {
+  AQI.setOption(
+    (option = {
+
+      tooltip: {
+        trigger: 'axis'
+      },
+      grid: {
+        left: '10%',
+        right: '25%',
+        bottom: '30%',
+        top:'8%'
+      },
+      xAxis: {
+        data: data.map(function (item) {
+          return item[0];
+        }),
+        axisLabel: {
+        color: "rgba(255,255,255)",
+        fontSize: "12"
+      },
+      },
+      yAxis: {
+        axisLabel: {
+        color: "rgba(255,255,255)",
+        fontSize: "12"
+      },
+      },
+      toolbox: {
+        right: 10,
+
+      },
+      dataZoom: [
+        {
+          startValue: '2014-06-01'
+        },
+        {
+          type: 'inside',
+          textstyle:{
+            color:'#fff',
+          fontSize:12,
+          fontFamily:'微软雅黑',
+          },
+          bottom:'50%'
+        }
+      ],
+      visualMap: {
+        textStyle:{
+          color:'#fff'
+        },
+        top: '10%',
+        right: '1%',
+        pieces: [
+          {
+            gt: 0,
+            lte: 50,
+            color: '#93CE07'
+          },
+          {
+            gt: 50,
+            lte: 100,
+            color: '#FBDB0F'
+          },
+          {
+            gt: 100,
+            lte: 150,
+            color: '#FC7D02'
+          },
+          {
+            gt: 150,
+            lte: 200,
+            color: '#FD0100'
+          },
+          {
+            gt: 200,
+            lte: 300,
+            color: '#AA069F'
+          },
+          {
+            gt: 300,
+            color: '#AC3B2A'
+          }
+        ],
+        outOfRange: {
+          color: '#999'
+        }
+      },
+      series: {
+        name: 'Beijing AQI',
+        type: 'line',
+        data: data.map(function (item) {
+          return item[1];
+        }),
+        markLine: {
+          silent: true,
+          lineStyle: {
+            color: 'rgba(255,255,255)',
+          },
+
+        }
+      }
+    })
+  );
 });
