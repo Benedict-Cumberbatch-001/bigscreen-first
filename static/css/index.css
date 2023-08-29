@@ -186,19 +186,15 @@ header .showTime {
 }
 .mainbox .column .panel .gun span:nth-child(2) {
   position: absolute;
-  left: 30%;
+  left: 37%;
 }
 .mainbox .column .panel .gun span:nth-child(3) {
   position: absolute;
-  left: 47%;
+  left: 58%;
 }
 .mainbox .column .panel .gun span:nth-child(4) {
   position: absolute;
-  left: 63%;
-}
-.mainbox .column .panel .gun span:nth-child(5) {
-  position: absolute;
-  left: 79%;
+  left: 80%;
 }
 .table {
   height: 3.3rem;
@@ -285,22 +281,17 @@ header .showTime {
 #FontScroll1 ul li .fontInner span:nth-child(2),
 #FontScroll1 ul li .fontInner div:nth-child(2) {
   position: absolute;
-  left: 37.5%;
+  left: 43%;
 }
 #FontScroll1 ul li .fontInner span:nth-child(3),
 #FontScroll1 ul li .fontInner div:nth-child(3) {
   position: absolute;
-  left: 53%;
+  left: 64%;
 }
 #FontScroll1 ul li .fontInner span:nth-child(4),
 #FontScroll1 ul li .fontInner div:nth-child(4) {
   position: absolute;
-  left: 66.5%;
-}
-#FontScroll1 ul li .fontInner span:nth-child(5),
-#FontScroll1 ul li .fontInner div:nth-child(5) {
-  position: absolute;
-  left: 85%;
+  left: 83.5%;
 }
 #FontScroll1 ul li:hover {
   box-shadow: -10px 0px 15px #034c6a inset, /*左边阴影*/ 10px 0px 15px #034c6a inset;

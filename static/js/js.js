@@ -12,306 +12,7 @@ function time() {
     document.querySelector(".showTime").innerHTML = '当前时间：' + y + "年" + mt + "月" + day + "-" + h + "时" + m + "分" + s + "秒";
     t = setTimeout(time, 1000); //设定定时器，循环运行
 }
-// 基于准备好的dom，初始化echarts实例
-// 柱状图
-//   var myChart = echarts.init(document.getElementById('pie'));
-//
-//   // 指定图表的配置项和数据
-//   var option = {
-//     xAxis: {
-//     type: 'category',
-//     data: [ "旅游行业","教育培训", "游戏行业", "医疗行业", "电商行业", "社交行业", "金融行业"],
-//         axisLabel: {
-//           color: "rgba(255,255,255,.6)",
-//           fontSize: "12"
-//       },
-//       // y轴线条样式
-//       axisLine: {
-//          show:false
-//           }
-//
-//   },
-//   yAxis: {
-//       type: 'value',
-//       axisLabel: {
-//           color: "rgba(255,255,255,.6)",
-//           fontSize: 12
-//       },
-//       axisLine: {
-//   lineStyle: {
-//      color: "rgba(255,255,255,.1)",
-//      // width: 1,
-//      // type: "solid"
-//               }
-//         },
-// // y 轴分隔线样式
-//     splitLine: {
-//         lineStyle: {
-//            color: "rgba(255,255,255,.1)"
-//          }
-//     }
-//   },
-//   series: [
-//     {
-//       data: [120, 200, 150, 80, 70, 110, 130],
-//       type: 'bar',
-//         barWidth:'40%',
-//         itemStyle:{
-//           barBorderRadius:5
-//         }
-//     }
-//   ],
-//     color: ["#2f89cf"],
-//     grid: {
-//       left: "0%",
-//       top: "10px",
-//       right: "0%",
-//       bottom: "4%",
-//       containLabel: true
-//     },
-//     tooltip:{
-//         trigger:'axis',
-//         axisPointer:{
-//             type:'shadow'
-//         },
-//
-//     }
-//
-//   };
-//
-//   // 使用刚指定的配置项和数据显示图表。
-//   myChart.setOption(option);
-//   window.addEventListener("resize", function() {//echarts自带的能随着页面大小自动变化的函数
-// myChart.resize();
-// });
 
-
-//饼状图实例
-// var option = {
-//   legend: {
-//       bottom:'10%',
-//       textStyle:{
-//         color:'white'
-//       }
-//
-//   },
-// color:['#73c0de','#fac858','#ee6666'],
-//   series: [
-//     {
-//         label:{
-//           color:'white',
-//         },
-//       name: 'Nightingale Chart',
-//       type: 'pie',
-//       radius: [10, 70],
-//       center: ['50%', '40%'],
-//       roseType: 'radius',
-//       itemStyle: {
-//         borderRadius: 3
-//       },
-//       data: [
-//         { value: 40, name: '隧道' },
-//         { value: 38, name: '地下厂房' },
-//         { value: 32, name: '边坡' },
-//
-//       ]
-//     }
-//   ]
-// };
-
-
-
-
-//
-// var zhexianchart=echarts.init(document.getElementById('zhexian'));
-// var DataName = ['安全', '报警','橙色预警','黄色预警'];
-// var DataA =["24", "15", "3", "27", "5", "16", "26"]; //安全
-// var DataB = ["14", "28", "6", "20", "17", "9", "23"];  //报警
-// var DataC=["8", "19", "27", "11", "25", "2", "29"];//橙色预警
-// var DataD=["7", "26", "18", "13", "22", "3", "16"];//黄色预警
-// var DataDM = ['2023/03/15','2023/03/16','2023/03/17', '2023/03/18','2023/03/19','2023/03/20','2023/03/21' ];
-// option ={
-//        // backgroundColor: "#344b58",
-//         tooltip: {
-//         trigger: "axis",
-//         axisPointer: {
-//             type: "line",
-//             textStyle: {
-//                 color: "#fff",
-//             }
-//           },
-//           //formatter: '{b}<br />{a}: {c}人',
-//           //backgroundColor: 'rgba(0,0,0,0.7)', //提示背景
-//         },
-//         grid: {
-//             top: '15%',
-//             left: '12%',
-//             right: '5%',
-//             bottom: '22%',
-//         },
-//
-//         legend: {
-//         align: "left",
-//         right: '5%',
-//         top:'5%',
-//         textStyle:{
-//             color:'#666',
-//             fontSize:12
-//         },
-//         icon:'pin',
-//         itemGap:25,
-//         itemWidth:20,
-//         itemHeight:5,
-//         data: DataName
-//         },
-//     xAxis: [{
-//         type: 'category',
-//         boundaryGap: false,
-//         axisLine: {
-//             show: false,
-//             lineStyle: {
-//                 color: '#666',
-//                 width:1,
-//             },
-//         },
-//         axisLabel: {
-//             textStyle: {
-//                 color: '#666',
-//                 padding: [10,0,0,0],
-//                 fontSize: 12
-//             },
-//         },
-//         splitLine: {
-//             show: false,
-//         },
-//         axisTick: {
-//             show: false,
-//         },
-//          data:DataDM
-//     },
-//     ],
-//     yAxis: [{
-//         name: '警示数量',
-//         nameTextStyle: {
-//             color: "#666",
-//             fontSize: 12,
-//             padding:[0,25,0,0],
-//             lineHeight: 40,
-//         },
-//         min:0,
-//         splitLine: {
-//             show: true,
-//             lineStyle: {
-//                 color: 'rgba(200,200,200,.5)',
-//                 type:'dashed'
-//             },
-//         },
-//         axisLine: {
-//             show: false,
-//         },
-//         axisLabel: {
-//             show: true,
-//             textStyle: {
-//                 color: '#666',
-//                 padding: 16,
-//                 fontSize: 12,
-//             },
-//         },
-//         axisTick: {
-//             show: false,
-//         },
-//     },
-// ],
-//     series: [{
-//         name: DataName[0],
-//         type: 'line',
-//         showAllSymbol: true,
-//         symbolSize: 8,
-//         symbol :'circle',
-//         smooth: true,
-//         lineStyle: {
-//             normal: {
-//                 width: 1,
-//                 color: "#00CA94",
-//             },
-//             borderColor: 'rgba(0,0,0,.4)',
-//         },
-//         itemStyle: {
-//             color: "#00CA94",
-//         },
-//         tooltip: {
-//             show: true
-//         },
-//         data:  DataA
-//     },
-//     {
-//         name: DataName[1],
-//         type: 'line',
-//         showAllSymbol: true,
-//         symbolSize: 8,
-//         symbol :'circle',
-//         smooth: true,
-//         lineStyle: {
-//             normal: {
-//                 width: 1,
-//                 color: "#FB388F",
-//             },
-//             borderColor: 'rgba(0,0,0,.4)',
-//         },
-//         itemStyle: {
-//             color: "#FB388F",
-//         },
-//         tooltip: {
-//             show: true
-//         },
-//         data: DataB
-//     },
-//     {
-//         name: DataName[2],
-//         type: 'line',
-//         showAllSymbol: true,
-//         symbolSize: 8,
-//         symbol :'circle',
-//         smooth: true,
-//         lineStyle: {
-//             normal: {
-//                 width: 1,
-//                 color: "#FFA500",
-//             },
-//             borderColor: 'rgba(0,0,0,.4)',
-//         },
-//         itemStyle: {
-//             color: "#FFA500",
-//         },
-//         tooltip: {
-//             show: true
-//         },
-//         data: DataC
-//     },
-//     {
-//         name: DataName[3],
-//         type: 'line',
-//         showAllSymbol: true,
-//         symbolSize: 8,
-//         symbol :'circle',
-//         smooth: true,
-//         lineStyle: {
-//             normal: {
-//                 width: 1,
-//                 color: "yellow",
-//             },
-//             borderColor: 'rgba(0,0,0,.4)',
-//         },
-//         itemStyle: {
-//             color: "yellow",
-//         },
-//         tooltip: {
-//             show: true
-//         },
-//         data: DataD
-//     },
-//     ]
-// }
 
 
 // 双饼状图表格，要求不要图形上的文字，只要图例
@@ -416,21 +117,24 @@ option = {
     fontWeight:'bold'}
   },
     grid:{
-      bottom:'18%'
+      bottom:'18%',
+      left:'12%',
+      right:'5%'
     },
   tooltip: {},
   dataset: {
     source: [
-      ['时间', '安全', '黄色预警', '橙色预警','报警'],
-      ['2023/08/15',14,5,3,3],
-      ['2023/08/16', 15, 5,3,3],
-      ['2023/08/17', 12,4, 8,3],
+      ['时间',  '黄色预警', '橙色预警','报警'],
+      ['2023/08/15',5,3,3],
+      ['2023/08/16',  5,3,3],
+      ['2023/08/17', 4, 8,3],
+      ['2023/08/18', 7, 5,6],
     ]
   },
   xAxis: { type: 'category',
         axisLabel: {
         color: "rgba(255,255,255,0.6)",
-        fontSize: "12"
+        fontSize: "10"
       },
   },
   yAxis: {
@@ -440,18 +144,30 @@ option = {
       },
       splitLine: {
         lineStyle: {
-        color: "rgba(255,255,255,.2)"}
-      }
+        color: "rgba(255,255,255,.2)"
+          }
+        },
+      name:'风 险 等 级 统 计 (个)',
+      nameLocation:'middle',
+      nameTextStyle: {
+        color: 'rgba(255,255,255,.7)',
+        fontFamily: '微软雅黑',
+        fontWeight:500,
+        fontSize: 13,
+        // padding: [0,0,0,0]
+      },
+        nameGap: 20
+
   },
   // Declare several bar series, each will be mapped
   // to a column of dataset.source by default.
   series: [
-      { type: 'bar' ,itemStyle: {
-        color: '#00CA94',
-          barBorderRadius: 3
-
-      }
-        },
+      // { type: 'bar' ,itemStyle: {
+      //   color: '#00CA94',
+      //     barBorderRadius: 3
+      //
+      // }
+      //   },
     { type: 'bar',itemStyle: {
         color: '#DBDB70',
         barBorderRadius: 3
@@ -482,10 +198,22 @@ var myColor = ["#1089E7", "#F57474", "#56D0E3", "#F8B448", "#8B78F6"];
 var bar2=echarts.init(document.getElementById('bar2'));
 // 2. 指定配置和数据
 var option = {
+  title: {
+    top:'5%',
+    text: '安全比例',
+    left: 'center',
+    textStyle:{
+      color: '#80FFA5',
+        fontFamily: '微软雅黑',
+        fontWeight:700,
+        fontSize: 14,
+    }
+
+  },
 grid: {
-  top: "5%",
-  left: "20%",
-  right:"15%",
+  top: "15%",
+  left: "15%",
+  right:"10%",
   bottom: "7.5%"
   // containLabel: true
 },
@@ -515,6 +243,7 @@ yAxis: [
     }
   },
   {
+
     data: [702, 350, 610, 793, 664],
     inverse: true,
     // 不显示y轴的线
@@ -536,7 +265,7 @@ series: [
   {
     name: "条",
     type: "bar",
-    data: [70, 34, 60, 78, 69],
+    data: [91, 80, 89, 95, 92],
     yAxisIndex: 0,
     // 修改第一组柱子的圆角
     itemStyle: {
@@ -598,13 +327,15 @@ var option = {
     }
   },
   legend: {
-    top:'2%',
-    left:'0%',
-    data: ['Line 1', 'Line 2', 'Line 3', 'Line 4', 'Line 5'],
+    top:'2.5%',
+    right:'3%',
+    align:'auto',
+    data: ['位移', '应力', '压力', '微震'],
     textStyle:{
       color:'white',
-      fontSize:10,
+      fontSize:12,
     },
+
     itemGap: 2
 
   },
@@ -613,7 +344,7 @@ var option = {
   },
   grid: {
     top:'20%',
-    left: '3%',
+    left: '2%',
     right: '5%',
     bottom: '5%',
     containLabel: true
@@ -635,12 +366,22 @@ var option = {
         lineStyle: {
         color: "rgba(255,255,255,.2)"}
       },
-      type: 'value'
+      type: 'value',
+       name:'风险数量累计(个)',
+      nameLocation:'end',
+      nameTextStyle: {
+        color: 'rgba(255,255,255,0.6)',
+        fontFamily: '微软雅黑',
+        fontWeight:500,
+        fontSize: 14,
+        padding: [0,0,0,20]
+      },
+        nameGap: 20
     }
   ],
   series: [
     {
-      name: 'Line 1',
+      name: '位移',
       type: 'line',
       stack: 'Total',
       smooth: true,
@@ -667,7 +408,7 @@ var option = {
       data: [140, 232, 101, 264, 90, 340, 250]
     },
     {
-      name: 'Line 2',
+      name: '应力',
       type: 'line',
       stack: 'Total',
       smooth: true,
@@ -694,7 +435,7 @@ var option = {
       data: [120, 282, 111, 234, 220, 340, 310]
     },
     {
-      name: 'Line 3',
+      name: '压力',
       type: 'line',
       stack: 'Total',
       smooth: true,
@@ -721,7 +462,7 @@ var option = {
       data: [320, 132, 201, 334, 190, 130, 220]
     },
     {
-      name: 'Line 4',
+      name: '微震',
       type: 'line',
       stack: 'Total',
       smooth: true,
@@ -747,37 +488,37 @@ var option = {
       },
       data: [220, 402, 231, 134, 190, 230, 120]
     },
-    {
-      name: 'Line 5',
-      type: 'line',
-      stack: 'Total',
-      smooth: true,
-      lineStyle: {
-        width: 0
-      },
-      showSymbol: false,
-      label: {
-        show: true,
-        position: 'top'
-      },
-      areaStyle: {
-        opacity: 0.8,
-        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-          {
-            offset: 0,
-            color: 'rgb(255, 191, 0)'
-          },
-          {
-            offset: 1,
-            color: 'rgb(224, 62, 76)'
-          }
-        ])
-      },
-      emphasis: {
-        focus: 'series'
-      },
-      data: [220, 302, 181, 234, 210, 290, 150]
-    }
+    // {
+    //   name: 'Line 5',
+    //   type: 'line',
+    //   stack: 'Total',
+    //   smooth: true,
+    //   lineStyle: {
+    //     width: 0
+    //   },
+    //   showSymbol: false,
+    //   label: {
+    //     show: true,
+    //     position: 'top'
+    //   },
+    //   areaStyle: {
+    //     opacity: 0.8,
+    //     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+    //       {
+    //         offset: 0,
+    //         color: 'rgb(255, 191, 0)'
+    //       },
+    //       {
+    //         offset: 1,
+    //         color: 'rgb(224, 62, 76)'
+    //       }
+    //     ])
+    //   },
+    //   emphasis: {
+    //     focus: 'series'
+    //   },
+    //   data: [220, 302, 181, 234, 210, 290, 150]
+    // }
   ]
 };
 line.setOption(option);
@@ -790,107 +531,170 @@ line.resize();
 
 //AQI监测数据图
 var AQI=echarts.init(document.getElementById('aqi'));
-$.get('/static/js/aqi-beijing.json', function (data) {
-  AQI.setOption(
-    (option = {
+option = {
+  title: {
+    text: '',
 
-      tooltip: {
-        trigger: 'axis'
-      },
-      grid: {
-        left: '10%',
-        right: '25%',
-        bottom: '30%',
-        top:'8%'
-      },
-      xAxis: {
-        data: data.map(function (item) {
-          return item[0];
-        }),
-        axisLabel: {
-        color: "rgba(255,255,255)",
-        fontSize: "12"
-      },
-      },
-      yAxis: {
-        axisLabel: {
-        color: "rgba(255,255,255)",
-        fontSize: "12"
-      },
-      },
-      toolbox: {
-        right: 10,
+    left: 'center'
+  },
+  tooltip: {
+    trigger: 'item'
+  },
+  legend: {
+    orient: 'vertical',
+    left: 'left',
+    textStyle:{
+      color:'white',
+        fontFamily:'宋体',
+        fontWeight:'bold',
+    },
+  },
+  series: [
+    {
+      name: 'Access From',
+      type: 'pie',
+      radius: '75%',
+      label: {
+        fontSize: 12,
+          fontFamily: '宋体',
+          color:'white',
+          borderType:'dotted',
+
 
       },
-      dataZoom: [
-        {
-          startValue: '2014-06-01'
-        },
-        {
-          type: 'inside',
-          textstyle:{
-            color:'#fff',
-          fontSize:12,
-          fontFamily:'微软雅黑',
-          },
-          bottom:'50%'
+      labelLine: {
+        length: 15,
+          lineStyle:{
+          width:2
         }
+        // show: false,
+
+      },
+      center:['60%','50%'],
+      data: [
+        { value: 1048, name: '岩爆' },
+        { value: 735, name: '塌方' },
+        { value: 580, name: '滑坡' },
+        { value: 484, name: '开裂' },
+        { value: 300, name: '突水' }
       ],
-      visualMap: {
-        textStyle:{
-          color:'#fff'
-        },
-        top: '10%',
-        right: '1%',
-        pieces: [
-          {
-            gt: 0,
-            lte: 50,
-            color: '#93CE07'
-          },
-          {
-            gt: 50,
-            lte: 100,
-            color: '#FBDB0F'
-          },
-          {
-            gt: 100,
-            lte: 150,
-            color: '#FC7D02'
-          },
-          {
-            gt: 150,
-            lte: 200,
-            color: '#FD0100'
-          },
-          {
-            gt: 200,
-            lte: 300,
-            color: '#AA069F'
-          },
-          {
-            gt: 300,
-            color: '#AC3B2A'
-          }
-        ],
-        outOfRange: {
-          color: '#999'
-        }
-      },
-      series: {
-        name: 'Beijing AQI',
-        type: 'line',
-        data: data.map(function (item) {
-          return item[1];
-        }),
-        markLine: {
-          silent: true,
-          lineStyle: {
-            color: 'rgba(255,255,255)',
-          },
-
+      emphasis: {
+        itemStyle: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
         }
       }
-    })
-  );
+    }
+  ]
+};
+AQI.setOption(option);
+  window.addEventListener("resize", function() {//echarts自带的能随着页面大小自动变化的函数
+AQI.resize();
 });
+
+
+// $.get('/static/js/aqi-beijing.json', function (data) {
+//   AQI.setOption(
+//     (option = {
+//
+//       tooltip: {
+//         trigger: 'axis'
+//       },
+//       grid: {
+//         left: '10%',
+//         right: '25%',
+//         bottom: '30%',
+//         top:'8%'
+//       },
+//       xAxis: {
+//         data: data.map(function (item) {
+//           return item[0];
+//         }),
+//         axisLabel: {
+//         color: "rgba(255,255,255)",
+//         fontSize: "12"
+//       },
+//       },
+//       yAxis: {
+//         axisLabel: {
+//         color: "rgba(255,255,255)",
+//         fontSize: "12"
+//       },
+//       },
+//       toolbox: {
+//         right: 10,
+//
+//       },
+//       dataZoom: [
+//         {
+//           startValue: '2014-06-01'
+//         },
+//         {
+//           type: 'inside',
+//           textstyle:{
+//             color:'#fff',
+//           fontSize:12,
+//           fontFamily:'微软雅黑',
+//           },
+//           bottom:'50%'
+//         }
+//       ],
+//       visualMap: {
+//         textStyle:{
+//           color:'#fff'
+//         },
+//         top: '10%',
+//         right: '1%',
+//         pieces: [
+//           {
+//             gt: 0,
+//             lte: 50,
+//             color: '#93CE07'
+//           },
+//           {
+//             gt: 50,
+//             lte: 100,
+//             color: '#FBDB0F'
+//           },
+//           {
+//             gt: 100,
+//             lte: 150,
+//             color: '#FC7D02'
+//           },
+//           {
+//             gt: 150,
+//             lte: 200,
+//             color: '#FD0100'
+//           },
+//           {
+//             gt: 200,
+//             lte: 300,
+//             color: '#AA069F'
+//           },
+//           {
+//             gt: 300,
+//             color: '#AC3B2A'
+//           }
+//         ],
+//         outOfRange: {
+//           color: '#999'
+//         }
+//       },
+//       series: {
+//         name: 'Beijing AQI',
+//         type: 'line',
+//         data: data.map(function (item) {
+//           return item[1];
+//         }),
+//         markLine: {
+//           silent: true,
+//           lineStyle: {
+//             color: 'rgba(255,255,255)',
+//           },
+//
+//         }
+//       }
+//     })
+//   );
+// });

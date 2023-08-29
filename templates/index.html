@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--width=device-width：指定视口的宽度与设备的宽度相等，使网页内容在设备上以真实的像素宽度显示，不会出现缩放或压缩。
 initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩放，以确保网页内容按照设备的实际像素比例显示。-->
-    <title>岩石工程安全分析及预警系统</title>
+    <title>岩体工程安全分析及预警系统</title>
     <link rel="stylesheet" href="/static/css/index.css"/>
 </head>
 <body >
     <header>
         <div class="head">
             <div class="head-gif"></div>
-            <h1>岩石工程安全分析及预警系统</h1>
+            <h1>岩体工程安全分析及预警系统</h1>
         </div>
 
         <div class="showTime"></div>
@@ -162,7 +162,6 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
                 <span >风险数量</span>
                 <span >待处理量</span>
                 <span >工程状态</span>
-                <span >风险等级比例</span>
             </div>
             <div id="FontScroll1" class="myscroll">
                 <ul>
@@ -172,7 +171,6 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
                             <span>6</span>
                             <span>2</span>
                             <span>完成</span>
-                            <div  class="little-pie" style="background: #ffeb7b; height: 0.3rem; width: 0.3rem; font-family: 'Times New Roman' ;"></div>
                         </div>
                     </li>
                     <li>
@@ -182,7 +180,6 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
                             <span>1</span>
                             <span>进行</span>
 
-                            <div  class="little-pie" style="background: #ffeb7b; height: 0.3rem; width: 0.3rem; font-family: 'Times New Roman' ;"></div>
                         </div>
                     </li>
                     <li>
@@ -192,7 +189,6 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
                             <span>3</span>
                             <span>进行</span>
 
-                            <div  class="little-pie" style="background: #ffeb7b; height: 0.3rem; width: 0.3rem; font-family: 'Times New Roman' ;"></div>
                         </div>
                     </li>
                     <li>
@@ -202,7 +198,6 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
                             <span>3</span>
                             <span>完成</span>
 
-                            <div  class="little-pie" style="background: #ffeb7b; height: 0.3rem; width: 0.3rem; font-family: 'Times New Roman' ;"></div>
                         </div>
                     </li>
                     <li>
@@ -212,7 +207,6 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
                             <span>0</span>
                             <span>完成</span>
 
-                            <div  class="little-pie" style="background: #ffeb7b; height: 0.3rem; width: 0.3rem; font-family: 'Times New Roman' ;"></div>
                         </div>
                     </li>
                     <li>
@@ -222,7 +216,7 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
                             <span>0</span>
                             <span>进行</span>
 
-                            <div  class="little-pie" style="background: #ffeb7b; height: 0.3rem; width: 0.3rem; font-family: 'Times New Roman' ;"></div>
+                            <!--<div  class="little-pie" style="background: #ffeb7b; height: 0.3rem; width: 0.3rem; font-family: 'Times New Roman' ;"></div>-->
                         </div>
                     </li>
 
@@ -232,12 +226,12 @@ initial-scale=1.0：指定初始的缩放比例为 1.0，即不进行任何缩�
             <div class="panel-footer"></div>
         </div>
         <div class="panel line">
-            <h2>预警统计</h2>
+            <h2>风险等级统计</h2>
             <div class="chart" id="zhuzhaung">图表</div>
             <div class="panel-footer"></div>
         </div>
         <div class="panel pie" style="height:3.3rem;margin-bottom: 0">
-            <h2>渐变折线图</h2>
+            <h2>风险累积量</h2>
             <div class="chart" style="height:2.8rem;" id="line"></div>
             <div class="panel-footer"></div>
         </div>
@@ -351,7 +345,7 @@ map.addEventListener('click', function (e) {
       console.log('已运行')
     $("#FontScroll1").myScroll({
       speed: 40,       // 设置滚动速度，值越大速度越慢
-      rowHeight: 41    // 设置每行的高度，由于每次滚动一行结束后会立刻跳到下一行的边缘，如果两行之间有间隔就会导致跳动，通过试验44是最好的滚动行高，多和少都会出现跳动
+      rowHeight: 44.5    // 设置每行的高度，由于每次滚动一行结束后会立刻跳到下一行的边缘，如果两行之间有间隔就会导致跳动，通过试验44是最好的滚动行高，多和少都会出现跳动
     });
   });
 </script>
@@ -361,7 +355,7 @@ map.addEventListener('click', function (e) {
       console.log('已运行')
     $("#FontScroll2").myScroll({
       speed: 40,       // 设置滚动速度，值越大速度越慢
-      rowHeight: 41    // 设置每行的高度，由于每次滚动一行结束后会立刻跳到下一行的边缘，如果两行之间有间隔就会导致跳动，通过试验44是最好的滚动行高，多和少都会出现跳动
+      rowHeight: 44.5    // 设置每行的高度，由于每次滚动一行结束后会立刻跳到下一行的边缘，如果两行之间有间隔就会导致跳动，通过试验44是最好的滚动行高，多和少都会出现跳动
     });
   });
 </script>
