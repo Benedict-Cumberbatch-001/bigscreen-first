@@ -118,7 +118,7 @@ option = {
   },
     grid:{
       bottom:'18%',
-      left:'12%',
+      left:'10%',
       right:'5%'
     },
   tooltip: {},
@@ -147,16 +147,16 @@ option = {
         color: "rgba(255,255,255,.2)"
           }
         },
-      name:'风 险 等 级 统 计 (个)',
-      nameLocation:'middle',
-      nameTextStyle: {
-        color: 'rgba(255,255,255,.7)',
-        fontFamily: '微软雅黑',
-        fontWeight:500,
-        fontSize: 13,
-        // padding: [0,0,0,0]
-      },
-        nameGap: 20
+      // name:'风 险 等 级 统 计 (个)',
+      // nameLocation:'middle',
+      // nameTextStyle: {
+      //   color: 'rgba(255,255,255,.7)',
+      //   fontFamily: '微软雅黑',
+      //   fontWeight:500,
+      //   fontSize: 13,
+      //   // padding: [0,0,0,0]
+      // },
+      //   nameGap: 20
 
   },
   // Declare several bar series, each will be mapped
@@ -328,7 +328,7 @@ var option = {
   },
   legend: {
     top:'2.5%',
-    right:'3%',
+    // right:'3%',
     align:'auto',
     data: ['位移', '应力', '压力', '微震'],
     textStyle:{
@@ -367,16 +367,16 @@ var option = {
         color: "rgba(255,255,255,.2)"}
       },
       type: 'value',
-       name:'风险数量累计(个)',
-      nameLocation:'end',
-      nameTextStyle: {
-        color: 'rgba(255,255,255,0.6)',
-        fontFamily: '微软雅黑',
-        fontWeight:500,
-        fontSize: 14,
-        padding: [0,0,0,20]
-      },
-        nameGap: 20
+      //  name:'风险数量累计(个)',
+      // nameLocation:'end',
+      // nameTextStyle: {
+      //   color: 'rgba(255,255,255,0.6)',
+      //   fontFamily: '微软雅黑',
+      //   fontWeight:500,
+      //   fontSize: 14,
+      //   padding: [0,0,0,20]
+      // },
+      //   nameGap: 20
     }
   ],
   series: [
@@ -553,21 +553,22 @@ option = {
     {
       name: 'Access From',
       type: 'pie',
-      radius: '75%',
+      radius: '90%',
       label: {
-        fontSize: 12,
-          fontFamily: '宋体',
-          color:'white',
-          borderType:'dotted',
-
-
+        // fontSize: 12,
+        //   fontFamily: '宋体',
+        //   color:'white',
+        //   borderType:'dotted',
+        //
+show:false
       },
       labelLine: {
-        length: 15,
-          lineStyle:{
-          width:2
-        }
-        // show: false,
+
+        // length: 15,
+        //   lineStyle:{
+        //   width:2
+        // }
+        show: false,
 
       },
       center:['60%','50%'],
